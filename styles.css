@@ -1,0 +1,294 @@
+:root {
+    --primary: #101d42;
+    --accent: #ffcc33;
+    --background: #f4f6fa;
+    --text: #222;
+}
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f6fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #101d42;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav h2 {
+    color: #ffcc33;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffcc33;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #101d42, #174b91);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 65px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #ffcc33;
+    color: #101d42;
+    padding: 12px 25px;
+    margin: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f0b900;
+}
+
+/* Common Sections */
+section {
+    padding: 55px 7%;
+}
+
+section h2 {
+    text-align: center;
+    color: #101d42;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* About Section */
+.about {
+    background-color: white;
+}
+
+.about h3 {
+    color: #174b91;
+    margin: 20px 0 10px;
+}
+
+.about ul {
+    padding-left: 25px;
+}
+
+/* Match Schedule */
+.schedule {
+    background-color: #eef2f8;
+}
+
+.filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+select, input {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    min-width: 750px;
+}
+
+th, td {
+    padding: 13px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #101d42;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f4f9;
+}
+
+.book-btn {
+    background-color: #174b91;
+    color: white;
+    padding: 7px 14px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.book-btn:hover {
+    background-color: #0b2e60;
+}
+
+/* Booking Section */
+.booking {
+    background-color: white;
+}
+
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.booking-form, .summary {
+    background-color: #f4f6fa;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.booking-form h3, .summary h3 {
+    color: #101d42;
+    margin-bottom: 20px;
+}
+
+.booking-form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.booking-form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.summary p {
+    margin: 12px 0;
+}
+
+.total {
+    font-size: 22px;
+    font-weight: bold;
+    color: #174b91;
+    border-top: 1px solid #ccc;
+    padding-top: 12px;
+}
+
+/* My Bookings */
+.mybookings {
+    background-color: #eef2f8;
+}
+
+#emptyMessage {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Guidelines */
+.guidelines {
+    background-color: white;
+}
+
+.guideline-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.guideline-card {
+    background-color: #f4f6fa;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    border-top: 5px solid #174b91;
+}
+
+.guideline-card h3 {
+    color: #174b91;
+    margin-bottom: 12px;
+}
+
+/* Footer */
+footer {
+    background-color: #101d42;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .guideline-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+}
