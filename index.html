@@ -6,29 +6,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL Ticket Booking</title>
-
     <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <h2>IPL 2026</h2>
+   <nav>
+    <h2>IPL 2026</h2>
 
-        <div>
-            <a href="#matches">Matches</a>
-            <a href="booking.html">Book Ticket</a>
-            <a href="#mybookings">My Bookings</a>
-            <a href="#guidelines">Guidelines</a>
-        </div>
-    </nav>
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#matches">Matches</a>
+        <a href="booking.html">Book Ticket</a>
+        <a href="#mybookings">My Bookings</a>
+        <a href="#guidelines">Guidelines</a>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <header class="hero">
         <h1>Experience The Stadium Energy Live!</h1>
         <p>Be part of the excitement. Watch your favourite IPL teams live!</p>
-
         <a href="#matches" class="btn">View Schedule</a>
         <a href="#booking" class="btn">Book Ticket</a>
     </header>
@@ -36,7 +37,6 @@
     <!-- About IPL Section -->
     <section class="about" id="about">
         <h2>About IPL 2026</h2>
-
         <p>
             The Indian Premier League (IPL) is one of the most
             exciting cricket tournaments in the world.
@@ -73,7 +73,6 @@
 
         <div class="filter">
             <label for="teamFilter">Filter by Team:</label>
-
             <select id="teamFilter">
                 <option value="all">All Teams</option>
                 <option value="CSK">CSK</option>
@@ -83,79 +82,69 @@
                 <option value="SRH">SRH</option>
             </select>
         </div>
+        <!-- Grid and List View Buttons -->
+        <div class="view-controls">
+        <button type="button" id="gridViewBtn">Grid View</button>
+        <button type="button" id="listViewBtn">List View</button>
+    </div>
 
-        <div class="table-container">
-            <table id="matchTable">
-                <thead>
-                    <tr>
-                        <th>Match Number</th>
-                        <th>Teams</th>
-                        <th>Date & Time</th>
-                        <th>Venue</th>
-                        <th>General</th>
-                        <th>Premium</th>
-                        <th>VIP</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+        <div class="matches-container">
 
-                <tbody>
-                    <tr data-teams="RCB CSK">
-                        <td>Match 1</td>
-                        <td>RCB vs CSK</td>
-                        <td>To be announced</td>
-                        <td>Bengaluru</td>
-                        <td>₹800</td>
-                        <td>₹1500</td>
-                        <td>₹3000</td>
-                        <td><a href="#booking" class="book-btn" data-match="Match 1 - RCB vs CSK">Book</a></td>
-                    </tr>
+            <div class="match-card" data-teams="RCB CSK">
+                <h3>Match 1</h3>
+                <p>RCB vs CSK</p>
+                <p>Date: To be announced</p>
+                <p>Venue: Bengaluru</p>
+                <p>General: ₹800</p>
+                <p>Premium: ₹1500</p>
+                <p>VIP: ₹3000</p>
+                <a href="#booking" class="book-btn" data-match="Match 1 - RCB vs CSK">Book</a>
+            </div>
 
-                    <tr data-teams="MI KKR">
-                        <td>Match 2</td>
-                        <td>MI vs KKR</td>
-                        <td>To be announced</td>
-                        <td>Mumbai</td>
-                        <td>₹900</td>
-                        <td>₹1800</td>
-                        <td>₹3500</td>
-                        <td><a href="#booking" class="book-btn" data-match="Match 2 - MI vs KKR">Book</a></td>
-                    </tr>
+            <div class="match-card" data-teams="MI KKR">
+                <h3>Match 2</h3>
+                <p>MI vs KKR</p>
+                <p>Date: To be announced</p>
+                <p>Venue: Mumbai</p>
+                <p>General: ₹900</p>
+                <p>Premium: ₹1800</p>
+                <p>VIP: ₹3500</p>
+                <a href="#booking" class="book-btn" data-match="Match 2 - MI vs KKR">Book</a>
+            </div>
 
-                    <tr data-teams="CSK SRH">
-                        <td>Match 3</td>
-                        <td>CSK vs SRH</td>
-                        <td>To be announced</td>
-                        <td>Chennai</td>
-                        <td>₹800</td>
-                        <td>₹1600</td>
-                        <td>₹3200</td>
-                        <td><a href="#booking" class="book-btn" data-match="Match 3 - CSK vs SRH">Book</a></td>
-                    </tr>
+            <div class="match-card" data-teams="CSK SRH">
+                <h3>Match 3</h3>
+                <p>CSK vs SRH</p>
+                <p>Date: To be announced</p>
+                <p>Venue: Chennai</p>
+                <p>General: ₹800</p>
+                <p>Premium: ₹1600</p>
+                <p>VIP: ₹3200</p>
+                <a href="#booking" class="book-btn" data-match="Match 3 - CSK vs SRH">Book</a>
+            </div>
 
-                    <tr data-teams="RCB MI">
-                        <td>Match 4</td>
-                        <td>RCB vs MI</td>
-                        <td>To be announced</td>
-                        <td>Bengaluru</td>
-                        <td>₹1000</td>
-                        <td>₹2000</td>
-                        <td>₹4000</td>
-                        <td><a href="#booking" class="book-btn" data-match="Match 4 - RCB vs MI">Book</a></td>
-                    </tr>
+            <div class="match-card" data-teams="RCB MI">
+                <h3>Match 4</h3>
+                <p>RCB vs MI</p>
+                <p>Date: To be announced</p>
+                <p>Venue: Bengaluru</p>
+                <p>General: ₹1000</p>
+                <p>Premium: ₹2000</p>
+                <p>VIP: ₹4000</p>
+                <a href="#booking" class="book-btn" data-match="Match 4 - RCB vs MI">Book</a>
+            </div>
 
-                    <tr data-teams="KKR CSK">
-                        <td>Match 5</td>
-                        <td>KKR vs CSK</td>
-                        <td>To be announced</td>
-                        <td>Kolkata</td>
-                        <td>₹850</td>
-                        <td>₹1700</td>
-                        <td>₹3300</td>
-                        <td><a href="#booking" class="book-btn" data-match="Match 5 - KKR vs CSK">Book</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="match-card" data-teams="KKR CSK">
+                <h3>Match 5</h3>
+                <p>KKR vs CSK</p>
+                <p>Date: To be announced</p>
+                <p>Venue: Kolkata</p>
+                <p>General: ₹850</p>
+                <p>Premium: ₹1700</p>
+                <p>VIP: ₹3300</p>
+                <a href="#booking" class="book-btn" data-match="Match 5 - KKR vs CSK">Book</a>
+            </div>
+
         </div>
     </section>
 
@@ -203,12 +192,10 @@
             <!-- Booking Summary Card -->
             <div class="summary">
                 <h3>Booking Summary</h3>
-
                 <p><b>Selected Match:</b> <span id="summaryMatch">Match 1 - RCB vs CSK</span></p>
                 <p><b>Stand:</b> <span id="summaryStand">General</span></p>
                 <p><b>Ticket Price:</b> ₹<span id="summaryPrice">800</span></p>
                 <p><b>Quantity:</b> <span id="summaryQuantity">1</span></p>
-
                 <p class="total">
                     Total Amount: ₹<span id="totalAmount">800</span>
                 </p>
@@ -233,9 +220,7 @@
                         <th>Total Amount</th>
                     </tr>
                 </thead>
-
-                <tbody id="bookingRecords">
-                </tbody>
+                <tbody id="bookingRecords"></tbody>
             </table>
         </div>
 
@@ -272,7 +257,6 @@
         <p>Designed for IPL Cricket Fans.</p>
     </footer>
 
-    
     <script src="../JS/app.js"></script>
 
 </body>
