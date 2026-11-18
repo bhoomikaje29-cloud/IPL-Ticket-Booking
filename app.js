@@ -53,6 +53,66 @@ bookButtons.forEach(function(button) {
 });
 
 
+// Select the booking form controls
+const matchSelect = document.getElementById("match");
+const standSelect = document.getElementById("stand");
+const quantityInput = document.getElementById("quantity");
+
+// Select the Booking Summary elements
+const summaryMatch = document.getElementById("summaryMatch");
+const summaryStand = document.getElementById("summaryStand");
+const summaryPrice = document.getElementById("summaryPrice");
+const summaryQuantity = document.getElementById("summaryQuantity");
+const totalAmount = document.getElementById("totalAmount");
+
+// Function to update the Booking Summary
+function updateSummary() {
+
+    // Get selected match
+    const selectedMatch = matchSelect.value;
+
+    // Get selected stand
+    const selectedStand = standSelect.value;
+
+    // Get ticket quantity
+    const quantity = Number(quantityInput.value);
+
+    // Set ticket price based on stand
+    let price;
+
+    if (selectedStand === "General") {
+        price = 800;
+    }
+    else if (selectedStand === "Premium") {
+        price = 1500;
+    }
+    else if (selectedStand === "VIP") {
+        price = 3000;
+    }
+
+    // Calculate total amount
+    const total = price * quantity;
+
+    // Update Booking Summary
+    summaryMatch.textContent = selectedMatch;
+    summaryStand.textContent = selectedStand;
+    summaryPrice.textContent = price;
+    summaryQuantity.textContent = quantity;
+    totalAmount.textContent = total;
+
+    // Show confirmation toast
+    showToast("Booking summary updated!");
+}
+
+// Add change event listeners
+matchSelect.addEventListener("change", updateSummary);
+standSelect.addEventListener("change", updateSummary);
+quantityInput.addEventListener("change", updateSummary);
+
+
+
+
+
 
 
 
