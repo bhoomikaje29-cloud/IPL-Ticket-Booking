@@ -109,10 +109,56 @@ matchSelect.addEventListener("change", updateSummary);
 standSelect.addEventListener("change", updateSummary);
 quantityInput.addEventListener("change", updateSummary);
 
+// Activity 8: Grid and List View Toggle
+
+const matchesContainer = document.querySelector(".matches-container");
+
+const gridViewBtn = document.getElementById("gridViewBtn");
+const listViewBtn = document.getElementById("listViewBtn");
+
+// Grid View Button
+gridViewBtn.addEventListener("click", function() {
+    matchesContainer.classList.remove("list-view");
+});
+
+// List View Button
+listViewBtn.addEventListener("click", function() {
+    matchesContainer.classList.add("list-view");
+});
+
+// Activity 8: Team Filter
+
+const teamFilter = document.getElementById("teamFilter");
+const matchCards = document.querySelectorAll(".match-card");
+
+teamFilter.addEventListener("change", function() {
+
+    const selectedTeam = teamFilter.value;
+
+    matchCards.forEach(function(card) {
+
+        const teams = card.dataset.teams;
+
+        if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+            card.style.display = "block";
+        }
+        else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
 
 
+// Activity 8: Hamburger Menu
 
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
+menuToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+});
 
 
 
